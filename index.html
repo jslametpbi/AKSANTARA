@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AKSANTARA — Aksara to AI</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" data-go="home" aria-label="AKSANTARA Home">
+    <span class="brand-logo" aria-hidden="true">
+      <svg viewBox="0 0 100 100" role="img"><defs><linearGradient id="lg" x1="0" x2="1"><stop stop-color="#fff3a8"/><stop offset="1" stop-color="#20e3d6"/></linearGradient></defs><circle cx="50" cy="50" r="42" fill="none" stroke="#f5dd7d" stroke-width="3"/><path d="M50 66 L50 36" stroke="#20e3d6" stroke-width="4" stroke-linecap="round"/><path d="M50 37 C33 28 25 24 14 23 C28 37 37 48 50 65" fill="none" stroke="#fff3a8" stroke-width="4"/><path d="M50 37 C67 28 75 24 86 23 C72 37 63 48 50 65" fill="none" stroke="#fff3a8" stroke-width="4"/><path d="M50 37 C43 25 37 16 27 11 C38 15 46 22 50 37" fill="none" stroke="#fff3a8" stroke-width="3"/><path d="M50 37 C57 25 63 16 73 11 C62 15 54 22 50 37" fill="none" stroke="#fff3a8" stroke-width="3"/></svg>
+    </span>
+    <span class="brand-text"><strong>AKSANTARA</strong><em>Aksara to AI</em></span>
+  </a>
+  <button class="menuBtn" id="menuBtn">Menu</button>
+  <nav class="nav" id="nav">
+    <button data-go="home">Home</button><button data-go="journey">Journey</button><button data-go="map">Province Map</button><button data-go="studio">Aksara Studio</button><button data-go="skills">Skills</button><button data-go="voice">Voice Atlas</button><button data-go="ai">AI Tutor</button><button data-go="qr">QR</button><button data-go="dossier">Dossier</button><button data-go="admin">Admin</button>
+  </nav>
+</header>
+<main>
+<section id="home" class="section hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Nusantara English Futures</p>
+    <h1>AKSANTARA</h1>
+    <h2>From Aksara to AI</h2>
+    <p class="lead">A professional edu-cultural learning ecosystem that transforms provincial scripts, local wisdom, voice, and integrated English skills into one interactive Nusantara journey.</p>
+    <div class="hero-actions"><button class="btn primary" data-go="map">Explore 38 Provinces</button><button class="btn" data-go="studio">Open Aksara Studio</button><button class="btn" data-go="skills">Start Skills Lab</button></div>
+    <div class="stats"><span><b>38</b>Province Hotspots</span><span><b>12+</b>Aksara Families</span><span><b>6</b>Living Zones</span><span><b>100%</b>Static Offline</span></div>
+  </div>
+  <div class="hero-visual" aria-label="AKSANTARA visual effect">
+    <div class="visual-card"><div class="bigword">AKSANTARA</div><div class="lightbook"><i></i><i></i><i></i><i></i></div><div class="orbit o1"></div><div class="orbit o2"></div><div class="glyph g1">ꦲ</div><div class="glyph g2">ᨀ</div><div class="glyph g3">ᬅ</div><div class="glyph g4">AI</div><div class="circuit c1"></div><div class="circuit c2"></div></div>
+  </div>
+</section>
+<section id="journey" class="section journey">
+  <div class="section-head"><p class="eyebrow">Monumental Learning Journey</p><h2>Six Living Zones</h2><p>The six zones operate as connected modules across scripts, stories, communication, global English, AI learning, and future-oriented outputs.</p></div>
+  <div class="zone-grid" id="zoneGrid"></div>
+  <div class="bridge-panel"><div><h3>Heritage Roots</h3><p>Aksara, manuscripts, oral stories, and provincial wisdom form the foundation.</p></div><div class="bridge-logo">AKSANTARA<br><span>Aksara to AI</span></div><div><h3>Future Horizons</h3><p>QR, audio, AI prompts, and integrated English tasks support global communication while preserving identity.</p></div></div>
+</section>
+<section id="map" class="section map-section">
+  <div class="section-head"><p class="eyebrow">Interactive Nusantara Map</p><h2>Province Hotspots</h2><p>Select any province. The whole app updates automatically: Aksara Studio, Skills, Voice Atlas, AI Tutor, QR Station, and Admin statistics.</p></div>
+  <div class="map-shell">
+    <div class="filters" id="filters"></div>
+    <div class="map-layout">
+      <div class="map-stage"><img src="assets/province-map-full-clean.png" alt="Full Nusantara province hotspot map" id="mapImg"><div id="hotspotLayer"></div></div>
+      <aside class="province-side"><input id="search" placeholder="Search province, aksara, wisdom..."><div class="province-cards" id="cards"></div></aside>
+    </div>
+    <div class="selected-chips" id="selectedChips"></div>
+  </div>
+</section>
+<section id="studio" class="section studio-section">
+  <div class="section-head"><p class="eyebrow">Main Feature</p><h2>Aksara Studio</h2><p>Choose any province, click aksara samples, write or copy them, and transform the selected samples into English–Indonesian learning sentences.</p></div>
+  <div class="toolbar"><select id="studioSelect"></select><button class="btn primary" id="copyAllAksara">Copy All Aksara Samples</button><button class="btn" id="copyWritten">Copy Written Aksara</button><button class="btn" id="translateBtn">Translate EN–ID</button></div>
+  <div class="studio-grid"><div class="panel"><h3 id="studioTitle"></h3><p id="studioDesc"></p><div class="sample-grid" id="sampleGrid"></div></div><div class="panel"><div class="workspace" id="workspace" contenteditable="true" spellcheck="false" aria-label="Aksara writing workspace"></div><div class="translation" id="translationBox"><b>Meaning / Translation:</b><br>Select or type aksara samples. Translation results will appear here.</div><div class="hero-actions"><button class="btn" id="clearStudio">Clear Studio</button><button class="btn" id="saveStudio">Save Studio PNG</button></div></div></div>
+</section>
+<section id="skills" class="section skills-section">
+  <div class="section-head"><p class="eyebrow">Integrated English Skills</p><h2>Skills Lab</h2><p>Higher-education tasks connect local scripts and wisdom with academic English, intercultural reflection, and intelligibility-oriented communication.</p></div>
+  <div class="skills-grid"><aside class="panel skill-nav" id="skillTabs"></aside><div class="panel"><div id="taskContent"></div></div><aside class="panel"><h3>Selected Province</h3><div id="skillProvince"></div><div class="progressbar"><span id="skillProgress"></span></div><p id="skillDone"></p></aside></div>
+</section>
+<section id="voice" class="section voice-section">
+  <div class="section-head"><p class="eyebrow">Voice Atlas / Pronunciation</p><h2>Voice Atlas</h2><p>Each province has an accent profile, model sentence, pronunciation focus, local recording option, stop/play controls, and intelligibility simulation.</p></div>
+  <div class="toolbar"><select id="voiceSelect"></select></div>
+  <div class="two-col"><div class="panel"><h3 id="voiceTitle"></h3><p id="voiceSentence"></p><div class="wave" id="voiceWave"></div><div class="hero-actions"><button class="btn primary" id="playVoice">Play Model Line</button><button class="btn" id="stopVoice">Stop</button><button class="btn" id="recordVoice">Start Record</button><button class="btn" id="stopRecord">Stop Record</button><button class="btn" id="playRecorded">Play Saved Accent</button></div><p id="voiceStatus"></p></div><div class="panel"><h3>Pronunciation Focus</h3><div class="info" id="pronFocus"></div><h3>Practice Line</h3><div class="info">“Our local script and wisdom can speak to the world through English.”</div><h3>Intelligibility Score</h3><div class="progressbar"><span id="voiceScoreBar"></span></div><p id="voiceScore">Ready</p></div></div>
+</section>
+<section id="ai" class="section ai-section">
+  <div class="section-head"><p class="eyebrow">Ethical AI Learning Partner</p><h2>AI Tutor</h2><p>No API key is required. The offline tutor generates responsive prompts using the selected province, aksara, wisdom, and current skill mission.</p></div>
+  <div class="ai-grid"><div class="panel"><h3>Aksantara AI</h3><div class="chat" id="chat"></div><div class="inputRow"><input id="aiInput" placeholder="Ask about the selected province, story, vocabulary, or task..."><button class="btn primary" id="aiSend">Send</button></div></div><div class="panel"><h3>Suggested Prompts</h3><div id="promptButtons" class="prompt-list"></div></div></div>
+</section>
+<section id="qr" class="section qr-section">
+  <div class="section-head"><p class="eyebrow">QR Discovery</p><h2>QR Discovery</h2><p>Generate a province QR card for exhibition stations, classroom use, or digital dossier access. Choose any province and the QR card updates with its Aksara, local wisdom, voice focus, and learning mission.</p></div>
+  <div class="toolbar"><label>QR Province:</label><select id="qrSelect"></select><button class="btn" id="qrApply">Apply Province</button></div>
+  <div class="qr-grid"><div class="qr-card"><h3>AKSANTARA</h3><p id="qrProvince"></p><img id="qrImg" alt="Province QR code"><p id="qrCaption"></p><button class="btn primary" id="downloadQR">Download QR Card</button></div><div class="panel"><h3>QR Details</h3><div id="qrDetails"></div><div class="hero-actions"><button class="btn" data-go="studio">Open Studio</button><button class="btn" data-go="skills">Open Skills</button><button class="btn" data-go="voice">Open Voice</button><button class="btn" data-go="ai">Open AI Tutor</button></div></div></div>
+</section>
+<section id="dossier" class="section dossier-section">
+  <div class="section-head"><p class="eyebrow">Professional Dossier</p><h2>Dossier</h2><p>Compact reference boards. Click each board to open it in full-view mode.</p></div>
+  <div class="dossier-grid"><button class="board" data-img="assets/visual-structure.png"><img src="assets/visual-structure.png"><span>Detailed Visual Structure</span></button><button class="board" data-img="assets/design-philosophy.png"><img src="assets/design-philosophy.png"><span>Design Philosophy</span></button><button class="board" data-img="assets/province-board.png"><img src="assets/province-board.png"><span>Province Hotspot Concepts</span></button><button class="board" data-img="assets/aksantara-board.png"><img src="assets/aksantara-board.png"><span>AKSANTARA UI/UX Board</span></button></div>
+</section>
+<section id="admin" class="section admin-section">
+  <div class="section-head"><p class="eyebrow">Owner Console</p><h2>Admin Dashboard</h2><p>PIN-protected console to update province content, add materials, manage aksara samples, reset progress, and export local app data.</p></div>
+  <div class="panel admin-panel"><h3>Admin Lock / Unlock</h3><div class="inputRow"><input id="pin" type="password" placeholder="PIN"><button class="btn primary" id="unlock">Unlock</button><button class="btn" id="lock">Lock</button></div><p id="adminStatus">Locked.</p><div id="adminBox" class="locked"><div class="admin-stats"><span><b id="adminProvince">Aceh</b>Selected Province</span><span><b id="adminCompleted">0/11</b>Completed Actions</span><span><b>Working</b>System Status</span></div><div class="admin-editor"><div><label>Province</label><select id="adminSelect"></select><label>Local Wisdom</label><input id="adminWisdom"><label>Story Seed</label><input id="adminStory"><label>Voice Focus</label><input id="adminFocus"><button class="btn primary" id="saveAdminContent">Save Province Update</button></div><div><label>New Material Title</label><input id="materialTitle" placeholder="e.g., Local proverb task"><label>New Material Content</label><textarea id="materialBody" placeholder="Write new material, task, or note..."></textarea><button class="btn" id="addMaterial">Add Material</button><div id="materialList"></div></div><div><label>Add Aksara Sample</label><input id="newAksara" placeholder="Aksara symbol"><input id="newMeaning" placeholder="Meaning / context"><button class="btn" id="addAksara">Add Aksara Sample</button><button class="btn" id="resetApp">Reset Local Progress</button><button class="btn" id="exportState">Export State JSON</button></div></div></div></div>
+</section>
+</main>
+<div class="modal" id="modal"><button id="closeModal">Close</button><img id="modalImg" alt="Full dossier board"></div>
+<div id="toast" class="toast"></div>
+<footer>Copyright © Dr. Joko Slamet. AKSANTARA — Aksara to AI, Nusantara English Futures.</footer>
+<script src="assets/script.js"></script>
+</body></html>
