@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AKSANTARA — Aksara to AI</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div id="particles" aria-hidden="true"></div>
+  <header class="topbar">
+    <button class="brand" data-nav="home" aria-label="AKSANTARA Home">
+      <span class="brand-mark">✦</span>
+      <span><b>AKSANTARA</b><small>Aksara to AI</small></span>
+    </button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <button data-nav="home">Home</button>
+      <button data-nav="journey">Journey</button>
+      <button data-nav="map">Province Map</button>
+      <button data-nav="studio">Aksara Studio</button>
+      <button data-nav="skills">Skills</button>
+      <button data-nav="voice">Voice Atlas</button>
+      <button data-nav="ai">AI Tutor</button>
+      <button data-nav="qr">QR</button>
+      <button data-nav="dossier">Dossier</button>
+      <button data-nav="admin">Admin</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active hero-page">
+      <div class="hero-4d">
+        <div class="hero-copy">
+          <p class="kicker">Nusantara English Futures</p>
+          <h1>AKSANTARA</h1>
+          <h2>From Aksara to AI</h2>
+          <p class="lead"><b>AKSANTARA</b> is an executive edu-cultural app that transforms Aksara Nusantara, provincial wisdom, oral traditions, and integrated English skills into one interactive learning journey. Every province becomes a living hotspot: script, voice, story, vocabulary, reading, speaking, writing, intercultural reflection, and ethical AI support.</p>
+          <div class="hero-actions">
+            <button class="primary" data-nav="map">Explore 38 Provinces</button>
+            <button data-nav="studio">Open Aksara Studio</button>
+            <button data-nav="skills">Start Integrated Skills</button>
+          </div>
+          <div class="stats-grid">
+            <div><b>38</b><span>Province Hotspots</span></div>
+            <div><b>12+</b><span>Aksara Families</span></div>
+            <div><b>6</b><span>Living Zones</span></div>
+            <div><b>100%</b><span>Offline Static App</span></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="AKSANTARA visual identity">
+          <div class="wing left-wing"></div>
+          <div class="wing right-wing"></div>
+          <div class="orb">AKSANTARA<br><span>Aksara to AI</span></div>
+          <img src="assets/visual-structure.png" alt="AKSANTARA visual structure reference integrated as premium background" />
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="page">
+      <div class="section-head">
+        <p class="kicker">Monumental Learning Journey</p>
+        <h2>Six Living Zones</h2>
+        <p>The six zones are implemented as connected app modules: choose a province, then the selected Aksara, wisdom, voice, tasks, QR, and admin record update across the whole system.</p>
+      </div>
+      <div id="zoneGrid" class="zone-grid"></div>
+      <div class="journey-flow glass-strong">
+        <div class="flow-card"><h3>Heritage Roots</h3><p>Aksara, manuscripts, stories, voices, and provincial wisdom form the learning foundation.</p></div>
+        <div class="central-seal">AKSANTARA<br><span>Aksara to AI</span></div>
+        <div class="flow-card"><h3>Future Horizons</h3><p>AI, QR, audio, 4D exploration, and integrated-skill tasks help learners communicate globally without losing cultural identity.</p></div>
+      </div>
+    </section>
+
+    <section id="map" class="page">
+      <div class="section-head map-head">
+        <div><p class="kicker">Interactive Nusantara Map</p><h2>Province Hotspots</h2></div>
+        <p>Select any province. The whole app updates automatically: Aksara Studio, Skills, Voice Atlas, AI Tutor, QR Station, and Admin statistics.</p>
+      </div>
+      <div class="map-shell glass-strong">
+        <div class="filter-row" id="regionFilters"></div>
+        <div class="map-layout">
+          <div class="map-stage">
+            <svg id="indoMap" viewBox="0 0 1100 520" role="img" aria-label="4D interactive Indonesia map with 38 province hotspots"></svg>
+            <div class="selected-ribbon" id="selectedRibbon"></div>
+          </div>
+          <aside class="province-panel">
+            <input id="provinceSearch" placeholder="Search province, aksara, wisdom..." />
+            <div id="provinceList" class="province-list"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio" class="page">
+      <div class="section-head studio-head">
+        <div><p class="kicker">Main Feature</p><h2>Aksara Studio</h2></div>
+        <p>Every province introduces a local script tradition, manuscript spirit, local wisdom, and English-learning transformation.</p>
+      </div>
+      <div class="studio-toolbar glass-strong">
+        <label>Province</label><select id="studioProvince"></select>
+        <label>Region</label><select id="studioRegion"></select>
+        <label>Aksara family</label><select id="studioAksaraFamily"></select>
+        <button id="openSelectedInMap">Show on Map</button>
+      </div>
+      <div class="studio-grid">
+        <article class="glass-strong studio-card">
+          <h3 id="studioTitle">Province — Aksara</h3>
+          <p id="studioDesc"></p>
+          <div id="glyphRow" class="glyph-row"></div>
+          <canvas id="traceCanvas" width="900" height="280" aria-label="Aksara tracing canvas"></canvas>
+          <div class="button-row">
+            <button class="primary" id="copySeed">Copy Aksara Seed</button>
+            <button id="clearTrace">Clear Trace</button>
+            <button id="saveTrace">Save Trace PNG</button>
+          </div>
+          <p class="hint">Trace, draw, or annotate script-inspired forms. Your work stays offline in this browser.</p>
+        </article>
+        <article class="glass-strong mission-card">
+          <h3>Heritage-to-English Mission</h3>
+          <div id="missionList" class="mission-list"></div>
+          <div class="progress"><span id="missionBar"></span></div>
+          <b id="missionText">0% completed</b>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="page">
+      <div class="section-head">
+        <p class="kicker">Integrated English Skills</p><h2>Skills Lab</h2>
+        <p>Higher-education tasks integrate listening, speaking, reading, writing, vocabulary, and intercultural reflection with the selected province and Aksara heritage.</p>
+      </div>
+      <div class="skills-layout">
+        <aside class="glass-strong skill-menu">
+          <div id="skillTabs" class="tabs"></div>
+          <div class="skill-state">
+            <h3>Selected Province</h3>
+            <p id="skillProvince"></p>
+            <div class="progress"><span id="skillProgress"></span></div>
+            <b id="skillCount">0 of 6 tasks completed</b>
+            <div id="skillBadges" class="badges"></div>
+          </div>
+        </aside>
+        <article class="glass-strong skill-main" id="skillMain"></article>
+      </div>
+    </section>
+
+    <section id="voice" class="page">
+      <div class="section-head">
+        <p class="kicker">Voice Atlas / Pronunciation</p><h2>Voice Atlas</h2>
+        <p>Practice intelligible English while respecting local identity. Every province has a model sentence, pronunciation focus, and score simulation.</p>
+      </div>
+      <div class="voice-grid">
+        <article class="glass-strong">
+          <h3 id="voiceTitle">Voice Atlas</h3>
+          <p id="voiceSentence"></p>
+          <div id="waveform" class="waveform"></div>
+          <div class="button-row"><button class="primary" id="playVoice">Play Model Voice</button><button id="recordVoice">Record / Simulate</button></div>
+          <p id="voiceStatus">Ready for practice.</p>
+        </article>
+        <article class="glass-strong voice-focus">
+          <h3>Pronunciation Focus</h3>
+          <div><b>Focus</b><p id="pronFocus"></p></div>
+          <div><b>Practice Line</b><p>“Our local script and wisdom can speak to the world through English.”</p></div>
+          <div><b>Intelligibility Score</b><div class="progress"><span id="voiceScoreBar"></span></div><p id="voiceScore">Ready</p></div>
+          <div class="province-voice-list" id="provinceVoiceList"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="ai" class="page">
+      <div class="section-head">
+        <p class="kicker">Ethical AI Learning Partner</p><h2>AI Tutor</h2>
+        <p>No API key is required. This offline tutor gives guided prompts based on the selected province, Aksara seed, and integrated-skill mission.</p>
+      </div>
+      <div class="ai-grid">
+        <article class="glass-strong chat-card">
+          <h3>Aksantara AI</h3>
+          <div id="chatLog" class="chat-log"></div>
+          <div class="chat-input"><input id="aiInput" placeholder="Ask about the selected province, story, vocabulary, or task..." /><button class="primary" id="aiSend">Send</button></div>
+        </article>
+        <article class="glass-strong">
+          <h3>Suggested Prompts</h3>
+          <div id="promptButtons" class="prompt-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="qr" class="page">
+      <div class="section-head">
+        <p class="kicker">QR Discovery Station</p><h2>QR</h2>
+        <p>Generate a QR-style learning card for the selected province. It works offline and can be downloaded for exhibition use.</p>
+      </div>
+      <div class="qr-layout">
+        <article class="glass-strong qr-card-preview">
+          <canvas id="qrCanvas" width="760" height="520"></canvas>
+          <div class="button-row"><button class="primary" id="downloadQR">Download QR Card</button><button id="refreshQR">Regenerate</button></div>
+        </article>
+        <article class="glass-strong">
+          <h3>QR Content</h3>
+          <div id="qrMeta"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="dossier" class="page">
+      <div class="section-head dossier-head">
+        <p class="kicker">Professional Dossier</p><h2>Dossier</h2>
+        <p>Reference boards are included as a professional dossier. App features are live and clickable; the boards document the visual philosophy and exhibition identity.</p>
+      </div>
+      <div class="dossier-grid" id="dossierGrid"></div>
+    </section>
+
+    <section id="admin" class="page">
+      <div class="section-head">
+        <p class="kicker">Owner Console</p><h2>Admin</h2>
+        <p>Locked owner area for controlling app data, progress, and local browser records.</p>
+      </div>
+      <div class="admin-layout">
+        <article class="glass-strong admin-lock" id="adminLock">
+          <h3>Admin Locked</h3>
+          <p>Enter PIN to unlock the owner console.</p>
+          <input id="pinInput" type="password" placeholder="PIN" />
+          <button class="primary" id="unlockAdmin">Unlock</button>
+          <p id="pinMsg"></p>
+        </article>
+        <article class="glass-strong admin-panel hidden" id="adminPanel">
+          <div class="admin-head"><h3>AKSANTARA Owner Console</h3><button id="lockAdmin">Lock</button></div>
+          <div class="admin-stats" id="adminStats"></div>
+          <textarea id="adminNote" placeholder="Owner notes for exhibition, revision, or deployment..."></textarea>
+          <div class="button-row"><button class="primary" id="saveAdminNote">Save Note</button><button id="exportData">Export Browser Data</button><button id="resetData">Reset Local Data</button></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>Copyright © Dr. Joko Slamet. AKSANTARA — Aksara to AI, Nusantara English Futures.</footer>
+  <div id="modal" class="modal hidden"><button id="closeModal">×</button><img id="modalImg" alt="Dossier board" /></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
